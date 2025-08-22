@@ -42,6 +42,20 @@ Adding the value of the `arrow-type` prop can change the position of the panel a
 
 :::
 
+:::demo collapse/alive
+
+### Display Directive
+
+Adding the value of the `alive` prop can change the display mode of the panel
+
+`true` or `'always'` – Renders the panel content with `v-show`
+
+`false` – Renders the panel content with `v-if`
+
+``'after-loading'` – Skips rendering the DOM until the panel is activated, then renders the panel content with `v-show`
+
+:::
+
 :::demo collapse/single
 
 ### Use Alone
@@ -72,13 +86,14 @@ interface CollapsePanelSlots {
 
 ### Collapse Props
 
-| Name       | Type                                       | Description                                                                                     | Default   | Since |
-| ---------- | ------------------------------------------ | ----------------------------------------------------------------------------------------------- | --------- | ----- |
-| expanded   | `string \| number \| (string \| number)[]` | Set the label value of the expanded panel, can be passed in an array when not in accordion mode | `null`    | -     |
-| card       | `boolean`                                  | Set whether to be in card mode                                                                  | `false`   | -     |
-| accordion  | `boolean`                                  | Set whether to accordion mode                                                                   | `false`   | -     |
-| arrow-type | `'right' \| 'left' \| 'none'`              | Set the type of the panel's indicator arrow                                                     | `'right'` | -     |
-| ghost      | `boolean`                                  | Set whether to set borderless mode                                                              | `false`   | -     |
+| Name       | Type                                       | Description                                                                                                                                                                                                                        | Default   | Since  |
+| ---------- | ------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- | ------ |
+| expanded   | `string \| number \| (string \| number)[]` | Set the label value of the expanded panel, can be passed in an array when not in accordion mode                                                                                                                                    | `null`    | -      |
+| card       | `boolean`                                  | Set whether to be in card mode                                                                                                                                                                                                     | `false`   | -      |
+| accordion  | `boolean`                                  | Set whether to accordion mode                                                                                                                                                                                                      | `false`   | -      |
+| arrow-type | `'right' \| 'left' \| 'none'`              | Set the type of the panel's indicator arrow                                                                                                                                                                                        | `'right'` | -      |
+| ghost      | `boolean`                                  | Set whether to set borderless mode                                                                                                                                                                                                 | `false`   | -      |
+| alive      | `boolean \| 'always' \| 'after-loading'`   | The mode to use in conditionally rendering the content. `false` will use `v-if` , `true` or `'always'` will use `v-show`. When use `after-loading`, the display effect is the same as show, but the content will be lazily loaded. | `false`   | 2.3.37 |
 
 ### Collapse Events
 

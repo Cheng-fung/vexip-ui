@@ -42,6 +42,20 @@
 
 :::
 
+:::demo collapse/alive
+
+### 展示指令
+
+添加 `alivee` 属性的值可以改变面板内容模式
+
+`true` 或者 `'always'` 表示使用 `v-show` 渲染
+
+`false` 表示使用 `v-if` 渲染
+
+`'after-loading'` 表示未激活面板时不渲染dom，激活后使用 `v-show` 渲染
+
+:::
+
 :::demo collapse/single
 
 ### 单独使用
@@ -64,13 +78,14 @@
 
 ### Collapse 属性
 
-| 名称       | 类型                                       | 说明                                                | 默认值    | 始于 |
-| ---------- | ------------------------------------------ | --------------------------------------------------- | --------- | ---- |
-| expanded   | `string \| number \| (string \| number)[]` | 设置展开的面板的 label 值，非手风琴模式时可传入数组 | `null`    | -    |
-| card       | `boolean`                                  | 设置是否为卡片模式                                  | `false`   | -    |
-| accordion  | `boolean`                                  | 设置是否为手风琴模式                                | `false`   | -    |
-| arrow-type | `'right' \| 'left' \| 'none'`              | 设置面板的指示箭头的类型                            | `'right'` | -    |
-| ghost      | `boolean`                                  | 设置是否为无边框模式                                | `false`   | -    |
+| 名称       | 类型                                       | 说明                                                                                                                                                      | 默认值    | 始于   |
+| ---------- | ------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- | ------ |
+| expanded   | `string \| number \| (string \| number)[]` | 设置展开的面板的 label 值，非手风琴模式时可传入数组                                                                                                       | `null`    | -      |
+| card       | `boolean`                                  | 设置是否为卡片模式                                                                                                                                        | `false`   | -      |
+| accordion  | `boolean`                                  | 设置是否为手风琴模式                                                                                                                                      | `false`   | -      |
+| arrow-type | `'right' \| 'left' \| 'none'`              | 设置面板的指示箭头的类型                                                                                                                                  | `'right'` | -      |
+| ghost      | `boolean`                                  | 设置是否为无边框模式                                                                                                                                      | `false`   | -      |
+| alive      | `boolean \| 'always' \| 'after-loading'`   | 面板内容渲染模式，`false` 对应 `v-if`，`true` 或 `'always'` 对应 `v-show`，`'after-loading'` 显示效果跟 `true` 或 `'always'` 一致，不过内容会进行延迟加载 | `false`   | 2.3.37 |
 
 ### Collapse 事件
 
